@@ -12,16 +12,25 @@ console.log(reprovados);
 
 //Método reduce
 let nodeJS = [10, 5, 8, 6];
-let dados = [5, 4, 8, 10];
-let negocios = [8, 7, 10, 4];
 
 function mediaTrilha(notasTrilha) {
     let soma = notasTrilha.reduce((acumulador, nota) => {
         return acumulador + nota;
-    }, 0);
+    }, 0); //No reduce, são usados dois parâmetros, a função callback e o valor inicial do acumulador, ou seja, ao invés de declarar uma variável em escopo global fora da função e dar o valor de 0, no reduce você dá o valor de 0 como segundo parâmetro. 
 
     let media = soma / notasTrilha.length;
     return media;
 }
 
 console.log(`A média da sala de Node.js foi ${mediaTrilha(nodeJS)}`);
+
+//Spread operator
+let dados = [5, 4, 8, 10];
+
+//let novosDados = dados; Caso eu escreva o código desse jeito, o JS entenderá que os arrays dados e novosDados são o mesmo, caso faça alteração em algum, ela será aplicada nos dois!, para criar um clone de um array, preciso usar o spread operador, conforme linha abaixo;
+
+let novosDados = [17, ...dados, 21];//Caso já precisa adicionar novos dados, ao invés de dar um push na outra linha, eu já posso adicionar ao novo array separando com vírgula; 
+novosDados.push(42);
+
+console.log(novosDados);
+console.log(dados);
