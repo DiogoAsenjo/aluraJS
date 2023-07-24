@@ -20,9 +20,20 @@ exibeNomeENota(`Diogo`);
 let numeros = [];
 let num = 100;
 
-for(i = 0; i < 6; i++) {
+for(let i = 0; i < 6; i++) {
     numeros.push(num);
     num = num + 100;
 }
 
 console.log(numeros);
+
+//For of
+let totalNotas = 0;
+
+for(elementos of alunosENotas[1]) { //Aqui, ao invés de ter que fazer um laço de repetição para percorrer todo o array, com o for of ele já entende que você quer percorrer o array inteiro;
+    totalNotas += elementos
+}
+
+let mediaTotal = totalNotas / alunosENotas[1].length;
+
+console.log(mediaTotal);
