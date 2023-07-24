@@ -8,3 +8,5 @@ const cliente = { //Aqui temos o objeto cliente, suas propriedades são nome, e-
 }
 
 console.log(`Bem vindo ao nosso site ${cliente.nome}!`);
+console.log(`Bem vindo ao nosso site ${cliente["nome"]}!`); //Ao invés do ."propriedade", podemos utilizar os colchetes;
+
