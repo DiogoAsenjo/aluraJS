@@ -34,3 +34,14 @@ novosDados.push(42);
 
 console.log(novosDados);
 console.log(dados);
+
+//Set - retirando dados repetidos;
+let contagem = [1, 1, 1, 2, 3, 4, 4, 5, 6, 7, 7, 7, 8, 9, 9, 10, 10];
+
+//let contagemSemRepetidos = new Set(contagem); //O set não possui elementos repetidos, o problema é que ele não cria uma nova lista/array, mas sim uma classe;
+
+//let contagemSemRepetidosLista = [...contagemSemRepetidos]; //Para transformar em lista basta usar o spread operator hehe;
+
+let contagemOrdenada = [...new Set(contagem)];
+
+console.log(contagemOrdenada);
