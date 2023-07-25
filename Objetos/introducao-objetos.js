@@ -19,3 +19,7 @@ cliente.cpf = `44499988803`; //Alterando propriedade existente;
 
 console.log(cliente.telefone);
 console.log(cliente);
+
+delete cliente.telefone; //Excluindo propriedade do objeto; 
+
+console.log(cliente);
