@@ -56,3 +56,13 @@ if(!chavesDoObjeto.includes(`endereco`)) {
 } else {
   console.log(`Compra realizada com sucesso`);
 }
+
+//Sintaxe de espalhamento, decompondo objetos, também conhecido com spread operator
+
+const encomenda = {
+  destinatario: cliente.nome,
+  //endereco: cliente.endereco[0], //Aqui no caso, essa propriedade irá receber o valor de um array de objetos do cliente, e caso fosse necessário ter várias propriedades e não um objeto?;
+  ...cliente.endereco[0], //Essa é a solução para a linha acima, ao invés de trazer o objeto do endereço, irá criar uma propriedade para cada propriedade do objeto, esses ... é a sintaxe do espalhamento;
+}
+
+console.log(encomenda);
