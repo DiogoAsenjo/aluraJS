@@ -43,3 +43,5 @@ cliente.efetuaPagamento = function(valor) { //Aqui estamos adicioando a função
 };
 
 cliente.efetuaPagamento(150);
+
+console.log(cliente);
