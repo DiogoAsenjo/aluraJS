@@ -37,6 +37,16 @@ Obs4.: Não permite funções, não permite comentários e suporta apenas tipos 
 
 //Lendo um arquivo JSON
 
-const dados = require("./cliente.json");
+const dados = require("./cliente.json"); //Usamos a função require para criar um objeto com os dados do arquivo JSON;
 console.log(dados);
 console.log(typeof dados);
+
+//Operações com JSON
+
+const clienteEmString = JSON.stringify(dados); //Aqui nós usamos o JSON.stringify(), para transformar o arquivo JSON em uma string, isso pode ser útil para manipular os dados, já que é mais fácil manipular uma string do que um objeto;
+
+console.log(clienteEmString);
+
+const objetoCliente = JSON.parse(clienteEmString); //Também é possível transformar a string em objeto;
+
+console.log(objetoCliente);
