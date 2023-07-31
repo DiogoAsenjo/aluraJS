@@ -33,3 +33,22 @@ for(let i = 0; i < livros.length; i++) {
 }
 
 console.log(` O livro mais barato é o de ${livroMaisBarato.nome}, que custa R$${livroMaisBarato.preço}`);
+
+function ordenar(lista, propriedade) {
+    const listaOrdenada = lista.sort((a, b) => {
+        if(a[propriedade] < b[propriedade]) {
+            return -1;
+        } else if (a[propriedade] > b[propriedade]) {
+            return 1;
+        } else {
+            return 0;
+        }
+    })
+
+    return listaOrdenada;
+}
+
+const maisBaratoProMaisCaro = ordenar(livros, "preço");
+const listaOrdemAlfabetica = ordenar(livros, "nome");
+
+console.log(maisBaratoProMaisCaro);
