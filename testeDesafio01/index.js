@@ -1,15 +1,26 @@
 const dadosUsuarios = require("./usuarios.json");
 
-console.log(dadosUsuarios[0]);
+//console.log(dadosUsuarios[0]);
 
-const login = "";
-const senha = "";
+const login = "samyra.lima@modalgr.com.br";
+const senha = "xpto2020";
 
 function validandoLogin(lista, chave, valor) {
-    let validacao = "";
-    if(!valor.includes("@modalgr.com.br")) validacao = "Login inválido";
-
-    return validacao;
+    if (lista.find((item) => item[chave].includes(valor))) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-//console.log(validandoLogin(dadosUsuarios, "usuario", "diogoasenjo@modalgr.com.br"));
+function validandoSenha(login) {
+    let index = dadosUsuarios.findIndex((item) => item.usuario === login);
+    if(dadosUsuarios[index].senha === senha) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(validandoLogin(dadosUsuarios, "usuario", login));
+console.log(validandoSenha(login));
