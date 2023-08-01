@@ -1,11 +1,9 @@
 const dadosUsuarios = require("./usuarios.json");
 
-//console.log(dadosUsuarios[0]);
+const login = "diogo.asenjo@modalgr.com.br";
+const senha = "diogo23";
 
-const login = "samyra.lima@modalgr.com.br";
-const senha = "rhmaneiro2021";
-
-function validandoLogin(lista, chave, valor) {
+/* function validandoLogin(lista, chave, valor) {
     if (lista.find((item) => item[chave].includes(valor))) {
         return true;
     } else {
@@ -20,11 +18,21 @@ function validandoSenha(login) {
     } else {
         return false;
     }
+} */
+
+const validandoUsuarioESenha = (lista, chave, valor) => {
+    if (lista.find((item) => item[chave].includes(valor))) {
+        let index = dadosUsuarios.findIndex((item) => item.usuario === valor);
+        return dadosUsuarios[index].senha === senha ? true : false;
+    } else {
+        return false;
+    }
 }
 
-
-if(validandoLogin(dadosUsuarios, "usuario", login) && validandoSenha(login)) {
+/* if(validandoLogin(dadosUsuarios, "usuario", login) && validandoSenha(login)) {
     console.log(`Usuário logado com sucesso`);
 } else {
     console.log(`Login ou senha inválidos`);
-}
+} */
+
+console.log(validandoUsuarioESenha(dadosUsuarios, "usuario", login));
