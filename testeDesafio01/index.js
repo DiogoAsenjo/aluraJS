@@ -36,3 +36,18 @@ const validandoUsuarioESenha = (lista, chave, valor) => {
 } */
 
 console.log(validandoUsuarioESenha(dadosUsuarios, "usuario", login));
+
+const cadastrandoUsuario = (novousuario, novasenha) => {
+    if(dadosUsuarios.find((item) => item.usuario.includes(novousuario))) {
+        return console.log(`Usuário já existente!`);
+    } else {
+        return dadosUsuarios.push({
+            usuario: novousuario,
+            senha: novasenha,
+        });
+    }
+}
+
+cadastrandoUsuario("diogo.asenjo@modalgr.com.br", "batatadepijama");
+
+console.log(dadosUsuarios);
