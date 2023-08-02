@@ -48,7 +48,7 @@ function ordenar(lista, propriedade) {
     return listaOrdenada;
 }
 
-const maisBaratoProMaisCaro = ordenar(livros, "preço");
+//const maisBaratoProMaisCaro = ordenar(livros, "preço");
 const listaOrdemAlfabetica = ordenar(livros, "nome");
 
-console.log(maisBaratoProMaisCaro);
+console.log(listaOrdemAlfabetica);
